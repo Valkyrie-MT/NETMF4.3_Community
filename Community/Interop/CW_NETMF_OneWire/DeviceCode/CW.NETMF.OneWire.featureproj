@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FeatureName>CW.NETMF.OneWire</FeatureName>
+    <Guid>{f9964501-cb5d-403a-802d-9035991c1c51}</Guid>
+    <Description />
+    <Groups />
+  </PropertyGroup>
+  <ItemGroup>
+    <!--<DriverLibs Include="CW_NETMF_OneWire.$(LIB_EXT)" />-->
+    <InteropFeature Include="CW_NETMF_OneWire" />
+    <!-- Uncomment the following line to include the assembly in the firmware image -->
+    <!--<MMP_DAT_CreateDatabase Include="$(SPOCLIENT)\Community\Interop\CW_NETMF_OneWire\ManagedCode\bin\$(Configuration)\$(ENDIANNESS)\CW.NETMF.OneWire.pe" />-->
+    <RequiredManagedProjects Include="$(SPOCLIENT)\Community\Interop\CW_NETMF_OneWire\ManagedCode\CW.NETMF.OneWire.csproj" />
+    <RequiredProjects Include="$(SPOCLIENT)\Community\Interop\CW_NETMF_OneWire\DeviceCode\dotnetmf.proj" />
+  </ItemGroup>
+</Project>

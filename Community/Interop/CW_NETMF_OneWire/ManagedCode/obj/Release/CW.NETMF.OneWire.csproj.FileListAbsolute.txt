@@ -1,0 +1,17 @@
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\bin\Release\le\CW.NETMF.OneWire.dll
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\bin\Release\be\CW.NETMF.OneWire.dll
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\bin\Release\le\CW.NETMF.OneWire.pdb
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\bin\Release\be\CW.NETMF.OneWire.pdb
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\bin\Release\CW.NETMF.OneWire.xml
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\bin\Release\CW.NETMF.OneWire.dll
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\bin\Release\CW.NETMF.OneWire.pdb
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\bin\Release\le\CW.NETMF.OneWire.pe
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\bin\Release\le\CW.NETMF.OneWire.pdbx
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\bin\Release\be\CW.NETMF.OneWire.pe
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\bin\Release\be\CW.NETMF.OneWire.pdbx
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\obj\Release\be\CW.NETMF.OneWire.pe
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\obj\Release\be\CW.NETMF.OneWire.pdbx
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\obj\Release\le\CW.NETMF.OneWire.pe
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\obj\Release\le\CW.NETMF.OneWire.pdbx
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\obj\Release\CW.NETMF.OneWire.dll
+C:\MFPK_v4_3_Comm\Community\Interop\CW_NETMF_OneWire\ManagedCode\obj\Release\CW.NETMF.OneWire.pdb

@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CW.NETMF.OneWire", "ManagedCode\CW.NETMF.OneWire.csproj", "{36D1E1DB-205C-4439-A90C-FA7ADB1023F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CW.NETMF.OneWire_DeviceCode", "CW.NETMF.OneWire_DeviceCode", "{CF0BF2D8-DC92-4928-A9BD-719EBE00F52C}"
+	ProjectSection(SolutionItems) = preProject
+		DeviceCode\CW.NETMF.OneWire.featureproj = DeviceCode\CW.NETMF.OneWire.featureproj
+		DeviceCode\CW_NETMF_OneWire.cpp = DeviceCode\CW_NETMF_OneWire.cpp
+		DeviceCode\CW_NETMF_OneWire.h = DeviceCode\CW_NETMF_OneWire.h
+		DeviceCode\CW_NETMF_OneWire_CW_NETMF_Hardware_OneWire.cpp = DeviceCode\CW_NETMF_OneWire_CW_NETMF_Hardware_OneWire.cpp
+		DeviceCode\CW_NETMF_OneWire_CW_NETMF_Hardware_OneWire.h = DeviceCode\CW_NETMF_OneWire_CW_NETMF_Hardware_OneWire.h
+		DeviceCode\CW_NETMF_OneWire_CW_NETMF_Hardware_OneWire_mshl.cpp = DeviceCode\CW_NETMF_OneWire_CW_NETMF_Hardware_OneWire_mshl.cpp
+		DeviceCode\dotNetMF.proj = DeviceCode\dotNetMF.proj
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneWireTestApp", "OneWireTestApp\OneWireTestApp.csproj", "{3439E55C-D880-4EE1-A90D-083E3A281171}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TinyCLR", "TinyCLR", "{C5B65D3E-C94B-4D78-BCAC-A2DCB769DA18}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\TinyCLR\scatterfile_ram_functions.xml = ..\..\TinyCLR\scatterfile_ram_functions.xml
+		..\..\TinyCLR\scatterfile_tinyclr_gcc.xml = ..\..\TinyCLR\scatterfile_tinyclr_gcc.xml
+		..\..\TinyCLR\scatterfile_tinyclr_mdk.xml = ..\..\TinyCLR\scatterfile_tinyclr_mdk.xml
+		..\..\TinyCLR\scatterfile_tinyclr_ram_functions.xml = ..\..\TinyCLR\scatterfile_tinyclr_ram_functions.xml
+		..\..\TinyCLR\scatterfile_tinyclr_rvds.xml = ..\..\TinyCLR\scatterfile_tinyclr_rvds.xml
+		..\..\TinyCLR\tinyclr.cpp = ..\..\TinyCLR\tinyclr.cpp
+		..\..\TinyCLR\TinyCLR.proj = ..\..\TinyCLR\TinyCLR.proj
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_PK", "_PK", "{E662AF83-2009-4A36-9220-42E1871C4537}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\DeviceCode\Include\netmf_errors.h = ..\..\..\..\DeviceCode\Include\netmf_errors.h
+		..\..\..\..\CLR\Include\TinyCLR_ErrorCodes.h = ..\..\..\..\CLR\Include\TinyCLR_ErrorCodes.h
+		..\..\..\..\CLR\Include\TinyCLR_Interop.h = ..\..\..\..\CLR\Include\TinyCLR_Interop.h
+		..\..\..\..\CLR\Include\TinyCLR_Types.h = ..\..\..\..\CLR\Include\TinyCLR_Types.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Netduino", "Netduino", "{81E51DA6-9CCD-46B8-A4F7-B80C9EA2CEAB}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\dotnetmf.proj = ..\..\dotnetmf.proj
+		..\..\Netduino.settings = ..\..\Netduino.settings
+		..\..\platform_selector.h = ..\..\platform_selector.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AT91", "AT91", "{58D907B0-0D8E-47F6-ACDB-54E8FBEB1B6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AT91_GPIO", "AT91_GPIO", "{BE2566E2-7A44-4D49-A8F1-392B30CFA8DD}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_GPIO\AT91_GPIO.cpp = ..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_GPIO\AT91_GPIO.cpp
+		..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_GPIO\AT91_GPIO.h = ..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_GPIO\AT91_GPIO.h
+		..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_GPIO\AT91_GPIO_functions.cpp = ..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_GPIO\AT91_GPIO_functions.cpp
+		..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_GPIO\dotNetMF.proj = ..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_GPIO\dotNetMF.proj
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AT91_TIME", "AT91_TIME", "{E00BEF42-83EA-4085-B644-F96FBE5332F7}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_TIME\AT91_TIME.cpp = ..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_TIME\AT91_TIME.cpp
+		..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_TIME\AT91_TIME.h = ..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_TIME\AT91_TIME.h
+		..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_TIME\AT91_time_functions.cpp = ..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_TIME\AT91_time_functions.cpp
+		..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_TIME\dotNetMF.proj = ..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_TIME\dotNetMF.proj
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AT91_TIMER", "AT91_TIMER", "{C2152321-8F53-45F6-9C66-A413014E7662}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_TIMER\AT91_TIMER.CPP = ..\..\..\..\DeviceCode\Targets\Native\AT91\DeviceCode\AT91_TIMER\AT91_TIMER.CPP
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36D1E1DB-205C-4439-A90C-FA7ADB1023F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D1E1DB-205C-4439-A90C-FA7ADB1023F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D1E1DB-205C-4439-A90C-FA7ADB1023F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D1E1DB-205C-4439-A90C-FA7ADB1023F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3439E55C-D880-4EE1-A90D-083E3A281171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3439E55C-D880-4EE1-A90D-083E3A281171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3439E55C-D880-4EE1-A90D-083E3A281171}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3439E55C-D880-4EE1-A90D-083E3A281171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3439E55C-D880-4EE1-A90D-083E3A281171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3439E55C-D880-4EE1-A90D-083E3A281171}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{81E51DA6-9CCD-46B8-A4F7-B80C9EA2CEAB} = {E662AF83-2009-4A36-9220-42E1871C4537}
+		{58D907B0-0D8E-47F6-ACDB-54E8FBEB1B6C} = {E662AF83-2009-4A36-9220-42E1871C4537}
+		{C5B65D3E-C94B-4D78-BCAC-A2DCB769DA18} = {81E51DA6-9CCD-46B8-A4F7-B80C9EA2CEAB}
+		{BE2566E2-7A44-4D49-A8F1-392B30CFA8DD} = {58D907B0-0D8E-47F6-ACDB-54E8FBEB1B6C}
+		{E00BEF42-83EA-4085-B644-F96FBE5332F7} = {58D907B0-0D8E-47F6-ACDB-54E8FBEB1B6C}
+		{C2152321-8F53-45F6-9C66-A413014E7662} = {58D907B0-0D8E-47F6-ACDB-54E8FBEB1B6C}
+	EndGlobalSection
+EndGlobal

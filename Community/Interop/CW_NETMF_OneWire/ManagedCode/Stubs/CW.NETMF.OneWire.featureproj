@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FeatureName>CW.NETMF.OneWire</FeatureName>
+    <Guid>{2cd5c1db-d58b-4121-9bb2-564af840c8be}</Guid>
+    <Description>&lt;Add Feature Description Here&gt;</Description>
+    <Groups />
+    <CW_NETMF_ONEWIRE_FEATUREPROJ>True</CW_NETMF_ONEWIRE_FEATUREPROJ>
+  </PropertyGroup>
+  <ItemGroup>
+    <DriverLibs Include="CW_NETMF_OneWire.$(LIB_EXT)" />
+    <InteropFeature Include="CW_NETMF_OneWire" />
+    <MMP_DAT_CreateDatabase Include="$(BUILD_TREE_CLIENT)\pe\$(ENDIANNESS)\CW.NETMF.OneWire.pe" />
+    <RequiredProjects Include="Stubs\Stubs\dotnetmf.proj" />
+  </ItemGroup>
+</Project>
