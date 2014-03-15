@@ -30,7 +30,7 @@
 #define     SERIAL_NUMBER_INDEX     0
 // device descriptor
 #define     VENDOR_ID          0x1B9F
-#define     PRODUCT_ID         0x0106 // 0x0106 <--- For new PID // 0x0102 <--- Old debugger Product ID
+#define     PRODUCT_ID         0x0102 // 0x0106 <--- For new PID // 0x0102 <--- Old debugger Product ID
 #define     MAX_EP0_SIZE            8
 //configuration descriptor
 #define     USB_MAX_CURRENT     (100/USB_CURRENT_UNIT)
