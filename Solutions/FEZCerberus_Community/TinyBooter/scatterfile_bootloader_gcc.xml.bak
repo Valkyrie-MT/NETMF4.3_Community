@@ -1,49 +1,43 @@
 <?xml version="1.0"?>
 <ScatterFile xmlns="http://schemas.microsoft.com/netmf/ScatterfileSchema.xsd">
 
-  <!-- STM32 with 1M internal Flash and 192k internal RAM -->
+  <!-- STM32F4 with 1M Flash, 128k SRAM, and 64k CCM -->
 
   <Set Name="Valid" Value="false"/>
 
   <!-- ################################################################################ -->
 
-  <Set Name="RAM_Start"           Value="0x20000000"/>
-  <Set Name="RAM_Size"            Value="0x00020000"/> <!--128k-->
-  <Set Name="CCM_Start"           Value="0x10000000"/>
-  <Set Name="CCM_Size"            Value="0x00010000"/>  <!--64k-->
-<!-- User memory can be larger for non Ethernet build :  -->
+  <!-- CCM -->
   <Set Name="Stack_Bottom"            Value="0x10000000"/>
-  <Set Name="Stack_Size"              Value="0x00008000"/> <!-- 32k -->
-  <Set Name="Heap_Begin"              Value="0x20000000"/>
-  <Set Name="Heap_End"                Value="0x2001CDF8"/> <!-- 115k -->
-  <Set Name="RLP_Region_Begin"        Value="0x2001D000"/> <!-- 11k -->
-<!--
-  <Set Name="Stack_Bottom"            Value="0x2001D000"/>
-  <Set Name="Stack_Size"              Value="0x000002DF8"/>   11k
-  <Set Name="Heap_Begin"              Value="0x20000000"/>
-  <Set Name="Heap_End"                Value="0x20019FF8"/>  103k
-  <Set Name="RLP_Region_Begin"        Value="0x2001A000"/>  12k
-  -->
+  <Set Name="Stack_Size"              Value="0x00004000"/>
+  <Set Name="Stack_Top"               Value="0x10003FF8"/>
 
-  <!-- Custom heap used for interrupt handler table only -->
-  <Set Name="Custom_Heap_Begin"       Value="0x2001FE00"/>
+  <Set Name="RAM_Start"               Value="0x10004000"/>
+  <Set Name="RAM_Size"               Value="0x00006000"/>
+
+  <!-- SRAM -->
+  <Set Name="Heap_Begin"              Value="0x20010000"/>
+  <Set Name="Heap_End"                Value="0x20017FF8"/>
+
+  <Set Name="Custom_Heap_Begin"       Value="0x20018000"/>
   <Set Name="Custom_Heap_End"         Value="0x2001FFF8"/>
 
-  <IfDefined Name="PROFILE_BUILD">
-    <Error Message="Configuration not implemented for GCC"/>
-  </IfDefined>
-
-<!-- NOTE: if you make changes to these addresses, you will also need to update DeviceCode\Blockstorage\STM32F4\STM32F4_BlConfig.cpp-->
-  
   <If Name="TARGETLOCATION" In="FLASH">
-    <Set Name="Config_BaseAddress"  Value="0x08008000"/>  <!-- Start of Config sector -->
-    <Set Name="Config_Size"         Value="0x00004000"/>  <!-- Note: this leaves the sector (3) in 0x0800C000 to 0x08010000 empty and unused -->
-    <Set Name="Code_BaseAddress"    Value="0x08010000"/>  <!-- Start of .NET MF Runtime -->
-    <Set Name="Deploy_BaseAddress"  Value="0x08080000"/>  <!-- Start of Application deployment area -->
-    <Set Name="Code_Size"           Value="%Deploy_BaseAddress - Code_BaseAddress%" /> 
-    <Set Name="Data_Size"           Value="0x00040000" />  <!-- Note: this leaves the last sectors (10 & 11) empty for use in programs -->
-    <Set Name="Valid"               Value="true"/>
+
+    <Set Name="Code_BaseAddress"  Value="0x08000000"/>
+    <Set Name="Code_Size"         Value="0x00008000"/>
+    <Set Name="Valid"             Value="true"/>
+
   </If>
+
+  <!--<If Name="TARGETLOCATION" In="RAM">
+
+    <Set Name="Code_BaseAddress"  Value="0x20000000"/>
+    <Set Name="Code_Size"         Value="0x0000C000"/>
+    <Set Name="Valid"             Value="true"/>
+
+  </If>-->
+
 
   <!-- ################################################################################ -->
 
@@ -52,24 +46,15 @@
   </If>
 
   <NamedGroup Name="MEMORY">
-    <LoadRegion Name="LR_%TARGETLOCATION%" Base="%Code_BaseAddress%" Options="ABSOLUTE" Size="%Code_Size%"/>
-    <IfDefined Name="Config_BaseAddress">
-      <LoadRegion Name="LR_CONFIG" Base="%Config_BaseAddress%" Size="%Config_Size%"/>
-    </IfDefined>
-    <IfDefined Name="Data_BaseAddress">
-      <LoadRegion Name="LR_DAT" Base="%Data_BaseAddress%" Size="%Data_Size%"/>
-    </IfDefined>
+    <LoadRegion Name="LR_%TARGETLOCATION%" Base="%Code_BaseAddress%" Size="%Code_Size%"/>
     <LoadRegion Name="HEAP" Base="%Heap_Begin%" Size="%Heap_End - Heap_Begin% + 1"/>
     <LoadRegion Name="STACK" Base="%Stack_Bottom%" Size="%Stack_Size%"/>
-    <LoadRegion Name="RAM" Base="%CCM_Start + Stack_Size%" Size="%CCM_Size - Stack_Size%"/>
+    <LoadRegion Name="RAM" Base="%RAM_Start%" Size="%RAM_Size%"/>
   </NamedGroup>
 
   <EntryPoint Name="EntryPoint"/>
 
   <NamedGroup Name="SECTIONS">
-    <!--<ExecRegion Name="ER_BOOT" Options="&gt;LR_BOOT">
-      <FileMapping Name="*" Options="(i.EntryPoint)"/>
-    </ExecRegion>-->
     <ExecRegion Name="ER_%TARGETLOCATION%" Base="%Code_BaseAddress%" Options="&gt;LR_%TARGETLOCATION%" Size="%Code_Size%">
       <FileMapping Name="*" Options="(i.EntryPoint)"/>
       <FileMapping Name="*" Options="(SectionForBootstrapOperations)" />
@@ -80,15 +65,10 @@
       <FileMapping Name="*" Options="(rodata)" />
       <FileMapping Name="*" Options="(.constdata*)" />
       <FileMapping Name="*" Options="(.conststring*)" />
-       <FileMapping Name="*" Options="(.glue*)" />
-      <FileMapping Name="*" Options="(tinyclr_metadata)" />
       <FileMapping Name="*" Options="(SectionForFlashOperations)" />
-     <!--<IfNotDefined Name="Data_BaseAddress">
-        <FileMapping Name="*" Options="(tinyclr_metadata)" />
-      </IfNotDefined>
-      <IfNotDefined Name="Config_BaseAddress">
-        <FileMapping Name="*" Options="(SectionForConfig)" />
-      </IfNotDefined>-->
+      <FileMapping Name="*" Options="(SectionForConfig)" />
+      <FileMapping Name="*" Options="(.glue*)" />
+      <!--<FileMapping Name="*" Options="(tinyclr_metadata)" />-->
       <!-- libc thinks that it needs these routines, but they are never called -->
       <Provide Name="_sbrk" />
       <Provide Name="_write" />
@@ -147,7 +127,7 @@
       <FileMapping Name="*" Options="(.ARM.extab*)" />
     </ExecRegion>
 
-    <IfDefined Name="Config_BaseAddress">
+    <!--<IfDefined Name="Config_BaseAddress">
       <ExecRegion Name="ER_CONFIG" Options="&gt;LR_CONFIG">
         <FileMapping Name="*" Options="(SectionForConfig)" />
       </ExecRegion>
@@ -156,7 +136,7 @@
       <ExecRegion Name="ER_DAT" Options="&gt;LR_DAT">
         <FileMapping Name="*" Options="(tinyclr_metadata)" />
       </ExecRegion>
-    </IfDefined>
+    </IfDefined>-->
   </NamedGroup>
 
   <!-- The following variables are used to simulate the ones autogenerated by RVDS -->

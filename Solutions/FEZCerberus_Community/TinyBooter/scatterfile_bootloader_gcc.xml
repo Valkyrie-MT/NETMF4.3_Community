@@ -25,7 +25,7 @@
   <If Name="TARGETLOCATION" In="FLASH">
 
     <Set Name="Code_BaseAddress"  Value="0x08000000"/>
-    <Set Name="Code_Size"         Value="0x00008000"/>
+    <Set Name="Code_Size"         Value="0x00008000"/>  <!-- This leaves Sector 2 empty for use with Persistent Table-->
     <Set Name="Valid"             Value="true"/>
 
   </If>

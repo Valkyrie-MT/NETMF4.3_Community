@@ -19,13 +19,13 @@
 #define FLASH_MANUFACTURER_CODE              0x0000  // not used
 #define FLASH_DEVICE_CODE                    0x0000  // not used
 #define FLASH_BASE_ADDRESS1                  0x08000000
-#define FLASH_BLOCK_COUNT1                   3  // pretending the 4th does not exist to leave it empty for use by PersistentTable
+#define FLASH_BLOCK_COUNT1                   4
 #define FLASH_BYTES_PER_BLOCK1               0x04000
 #define FLASH_BASE_ADDRESS2                  0x08010000
 #define FLASH_BLOCK_COUNT2                   1
 #define FLASH_BYTES_PER_BLOCK2               0x10000
 #define FLASH_BASE_ADDRESS3                  0x08020000
-#define FLASH_BLOCK_COUNT3                   5 // pretending the 6th and 7th does not exist to leave it empty for use by PersistentTable
+#define FLASH_BLOCK_COUNT3                   7
 #define FLASH_BYTES_PER_BLOCK3               0x20000
 #define FLASH_BYTES_PER_SECTOR               2
 #define FLASH_BLOCK_ERASE_TYPICAL_TIME_USEC  1000000 // not used
@@ -78,7 +78,7 @@ const BlockRange g_STM32F4_BlockRange1[] =
 {
     { BlockRange::BLOCKTYPE_BOOTSTRAP ,   0, 1 },  // 08000000 bootloader   32k
 												   // 08008000 Internal Flash for PersistentTable 16k
-    { BlockRange::BLOCKTYPE_CONFIG    ,   2, 2 },  // 0800C000 config       16k
+    { BlockRange::BLOCKTYPE_CONFIG    ,   3, 3 },  // 0800C000 config       16k
 };
 
 const BlockRange g_STM32F4_BlockRange2[] =
@@ -89,7 +89,7 @@ const BlockRange g_STM32F4_BlockRange2[] =
 const BlockRange g_STM32F4_BlockRange3[] =
 {
     { BlockRange::BLOCKTYPE_CODE      ,   0, 2 },  // 08020000 CLR         384k
-    { BlockRange::BLOCKTYPE_DEPLOYMENT,   3, 4 },  // 08080000 deployment  256k
+    { BlockRange::BLOCKTYPE_DEPLOYMENT,   3, 6 },  // 08080000 deployment  512k
     //{ BlockRange::BLOCKTYPE_CODE      ,   0, 2 },  // 08020000 CLR         384k
     //{ BlockRange::BLOCKTYPE_DEPLOYMENT,   3, 6 },  // 08080000 deployment  512k
     //{ BlockRange::BLOCKTYPE_STORAGE_A ,   5, 5 },  // 080C0000 storage A   128k

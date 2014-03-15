@@ -16,7 +16,7 @@
 //--//
 
 //string descriptor
-#define     MANUFACTURER_NAME_SIZE  9 /* "GHI Electronics" */ //5   /* "Ominc" */
+#define     MANUFACTURER_NAME_SIZE  15 /* "GHI Electronics" */ //5   /* "Ominc" */
 // NOTE: Having more than (probably) 32 characters causes the MFUSB KERNEL driver
 // to *CRASH* which, of course, causes Windows to crash
 #define     PRODUCT_NAME_SIZE      11 /* "Cerb-Family" */ //12 /* "FEZ Cerberus" */ //15   /* "STM32 .Net Test" */
@@ -162,7 +162,7 @@ const struct USB_DYNAMIC_CONFIGURATION UsbDefaultConfiguration =
         USB_STRING_DESCRIPTOR_HEADER_LENGTH + (sizeof(USB_STRING_CHAR) * MANUFACTURER_NAME_SIZE),
         USB_STRING_DESCRIPTOR_TYPE
     },
-    { 'C', 'o', 'm', 'm', 'u', 'n', 'i', 't', 'y' },
+    { 'G', 'H', 'I', ' ', 'E', 'l', 'e', 'c', 't', 'r', 'o', 'n', 'i', 'c', 's' },
     //{ 'O', 'm', 'i', 'n', 'c' },
 
     // Product name string descriptor

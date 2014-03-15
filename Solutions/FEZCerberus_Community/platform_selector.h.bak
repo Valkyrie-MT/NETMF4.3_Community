@@ -95,7 +95,7 @@
 #define CTSPROTECTRESISTOR              RESISTOR_DISABLED
 #define RTSPROTECTRESISTOR              RESISTOR_DISABLED
 
-#define TOTAL_GPIO_PORT                 4 // PA - PD
+#define TOTAL_GPIO_PORT                 (4+1) // PA - PD 
 #define INSTRUMENTATION_H_GPIO_PIN      GPIO_PIN_NONE
 
 #define TOTAL_USART_PORT                3

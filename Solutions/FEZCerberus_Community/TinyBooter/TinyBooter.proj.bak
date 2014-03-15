@@ -171,13 +171,9 @@
     <DriverLibs Include="piezo_pal_stubs.$(LIB_EXT)" />
     <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\PAL\Piezo\stubs\dotNetMF.proj" />
   </ItemGroup>
-  <!--<ItemGroup>
+  <ItemGroup>
     <DriverLibs Include="tinycrt_pal_loader.$(LIB_EXT)" />
     <RequiredProjects Include="$(SPOCLIENT)\devicecode\pal\TinyCRT\dotNetMF_loader.proj" />
-  </ItemGroup>-->
-  <ItemGroup>
-    <DriverLibs Include="tinycrt_pal_stubs.$(LIB_EXT)" />
-    <RequiredProjects Include="$(SPOCLIENT)\devicecode\pal\TinyCRT\stubs\dotNetMF.proj" />
   </ItemGroup>
   <ItemGroup>
     <PlatformIndependentLibs Include="CRC.$(LIB_EXT)" />

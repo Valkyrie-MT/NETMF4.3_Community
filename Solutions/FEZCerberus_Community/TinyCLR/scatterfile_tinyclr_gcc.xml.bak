@@ -36,12 +36,12 @@
 <!-- NOTE: if you make changes to these addresses, you will also need to update DeviceCode\Blockstorage\STM32F4\STM32F4_BlConfig.cpp-->
   
   <If Name="TARGETLOCATION" In="FLASH">
-    <Set Name="Config_BaseAddress"  Value="0x08008000"/>  <!-- Start of Config sector -->
-    <Set Name="Config_Size"         Value="0x00004000"/>  <!-- Note: this leaves the sector (3) in 0x0800C000 to 0x08010000 empty and unused -->
-    <Set Name="Code_BaseAddress"    Value="0x08010000"/>  <!-- Start of .NET MF Runtime -->
-    <Set Name="Deploy_BaseAddress"  Value="0x08080000"/>  <!-- Start of Application deployment area -->
+    <Set Name="Config_BaseAddress"  Value="0x0800C000"/>
+    <Set Name="Config_Size"         Value="0x00004000"/>  
+    <Set Name="Code_BaseAddress"    Value="0x08010000"/>  
+    <Set Name="Deploy_BaseAddress"  Value="0x08080000"/>  <!-- Note: this leaves the sector in 0x08080000 to 0x080A000 empty and unused -->
     <Set Name="Code_Size"           Value="%Deploy_BaseAddress - Code_BaseAddress%" /> 
-    <Set Name="Data_Size"           Value="0x00040000" />  <!-- Note: this leaves the last sectors (10 & 11) empty for use in programs -->
+    <Set Name="Data_Size"           Value="0x00080000" />
     <Set Name="Valid"               Value="true"/>
   </If>
 
