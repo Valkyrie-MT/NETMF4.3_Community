@@ -56,7 +56,7 @@
 
 #define GHI_VERSION_MAJOR 4
 #define GHI_VERSION_MINOR 3
-#define GHI_VERSION_BUILD 1
+#define GHI_VERSION_BUILD 0
 #define GHI_VERSION_REVISION 0
 #define GHIOEMSTRING "Copyright (C) GHI Electronics, LLC (and contributors)"
 
@@ -95,7 +95,7 @@
 #define CTSPROTECTRESISTOR              RESISTOR_DISABLED
 #define RTSPROTECTRESISTOR              RESISTOR_DISABLED
 
-#define TOTAL_GPIO_PORT                 4 // PA - PD
+#define TOTAL_GPIO_PORT                 (4+1) // PA - PD 
 #define INSTRUMENTATION_H_GPIO_PIN      GPIO_PIN_NONE
 
 #define TOTAL_USART_PORT                3

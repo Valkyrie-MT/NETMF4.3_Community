@@ -12,5 +12,7 @@
 //-----------------------------------------------------------------------------
 
 #define NETWORK_MEMORY_PROFILE_LWIP__small         1
-#define TCPIP_LWIP                                 0
+#define TCPIP_LWIP                                  0
+
+// Note: Remember to update scatter file to provide less RAM, see note: User memory can be larger for non Ethernet build 
 
